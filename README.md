@@ -2,15 +2,9 @@
 
 This project involves running a series of 8 queries on a Google Analytics Sample Dataset using BigQuery. The dataset contains valuable information about website traffic and user interactions.
 
-## Dataset
+## Dataset desciption
 
-The project utilizes a sample dataset from the [Google Merchandise Store](https://www.googlemerchandisestore.com/shop.axd/Home?utm_source=Partners&utm_medium=affiliate&utm_campaign=Data%20Share%20Promo). The dataset contains obfuscated Google Analytics 360 data and represents a real ecommerce store. It includes the following types of information:
-
-- **Traffic source data**: Information about where website visitors originate, including data about organic traffic, paid search traffic, display traffic...
-- **Content data**: Information about user behavior on the site, including the URLs of pages visited and how users interact with content.
-- **Transactional data**: Information about the transactions that occur on the Google Merchandise Store website.
-  
-## Data Description
+The project utilizes a sample dataset from the [Google Merchandise Store](https://www.googlemerchandisestore.com/shop.axd/Home?utm_source=Partners&utm_medium=affiliate&utm_campaign=Data%20Share%20Promo). The dataset contains obfuscated Google Analytics 360 data and represents a real ecommerce store.
 
 In this dataset, there are numerous fields available. Below, I list some of the important fields that I will use in my queries:
 
