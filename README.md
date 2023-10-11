@@ -37,18 +37,11 @@ For more detailed information on the dataset schema, you can refer to [the Googl
 
 The queries are as follows:
 
-**Query 01:** Calculate total visits, pageviews, and transactions for Jan, Feb, and March 2017, ordered by month.
-
-**Query 02:** Bounce session is the session that user does not raise any click after landing on the website. Determine the bounce rate per traffic source in July 2017 and sort the results in descending order by total_visit. *(Bounce_rate = num_bounce / total_visit)*.
-
-**Query 03:** Calculate revenue by traffic source by week and by month in June 2017.
-
-**Query 04:** Find the average number of pageviews by purchaser type (purchasers vs. non-purchasers) in June and July 2017.
-
-**Query 05:** Calculate the average number of transactions per user who made a purchase in July 2017.
-
-**Query 06:** Determine the average amount of money spent per session, considering only purchaser data in July 2017.
-
-**Query 07:** Identify other products purchased by customers who bought the product "YouTube Men's Vintage Henley" in July 2017. The output should show the product name and the quantity ordered.
-
-**Query 08:** Calculate a cohort map from product view to add to cart to purchase in Jan, Feb, and March 2017. Calculate the add_to_cart rate and purchase rate in product level. For example, 100% product view then 40% add_to_cart and 10% purchase. The output should be calculated in product level. *(Add_to_cart_rate = number product  add to cart / number product view. Purchase_rate = number product purchase / number product view)*.
+- **Query 1:** Calculate total visits, pageviews, and transactions for Jan, Feb, and March 2017, ordered by month.
+- **Query 2:** Bounce session is the session that user does not raise any click after landing on the website. Determine the bounce rate per traffic source in July 2017 and sort the results in descending order by total_visit. *(Bounce_rate = num_bounce / total_visit)*.
+- **Query 3:** Calculate revenue by traffic source by week and by month in June 2017.
+- **Query 4:** Find the average number of pageviews by purchaser type (purchasers vs. non-purchasers) in June and July 2017.
+- **Query 5:** Calculate the average number of transactions per user who made a purchase in July 2017.
+- **Query 6:** Determine the average amount of money spent per session, considering only purchaser data in July 2017.
+- **Query 7:** Identify other products purchased by customers who bought the product "YouTube Men's Vintage Henley" in July 2017. The output should show the product name and the quantity ordered.
+- **Query 8:** Calculate a cohort map from product view to add to cart to purchase in Jan, Feb, and March 2017. Calculate the add_to_cart rate and purchase rate in product level. For example, 100% product view then 40% add_to_cart and 10% purchase. The output should be calculated in product level. *(Add_to_cart_rate = number product  add to cart / number product view. Purchase_rate = number product purchase / number product view)*.
