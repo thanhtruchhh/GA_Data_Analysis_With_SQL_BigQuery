@@ -27,7 +27,7 @@ In this dataset, there are numerous fields available. Below, I list some of the 
 
 For more detailed information on the dataset schema, you can refer to the [Google Analytics documentation](https://support.google.com/analytics/answer/3437719?hl=en).
 
-## SQL Queries
+## Questions
 
 The queries are as follows:
 
