@@ -2,7 +2,7 @@
 
 This project involves running a series of 8 queries on a Google Analytics Sample Dataset using BigQuery. The dataset contains valuable information about website traffic and user interactions.
 
-## Dataset desciption
+## Dataset
 
 The project utilizes a sample dataset from the [Google Merchandise Store](https://www.googlemerchandisestore.com/shop.axd/Home?utm_source=Partners&utm_medium=affiliate&utm_campaign=Data%20Share%20Promo). The dataset contains obfuscated Google Analytics 360 data and represents a real ecommerce store.
 
@@ -25,7 +25,7 @@ In this dataset, there are numerous fields available. Below, I list some of the 
   - **hits.product.productSKU** (STRING): Product SKU.
   - **hits.product.v2ProductName** (STRING): Product Name.
 
-For more detailed information on the dataset schema, you can refer to [the Google Analytics documentation](https://support.google.com/analytics/answer/3437719?hl=en).
+For more detailed information on the dataset schema, you can refer to the [Google Analytics documentation](https://support.google.com/analytics/answer/3437719?hl=en).
 
 ## SQL Queries
 
