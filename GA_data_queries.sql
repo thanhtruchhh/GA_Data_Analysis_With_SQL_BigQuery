@@ -1,4 +1,3 @@
--- Project 1
 -- Q1:  Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).
 -- Output: Month, total visits, total pageviews, total transactions
 
