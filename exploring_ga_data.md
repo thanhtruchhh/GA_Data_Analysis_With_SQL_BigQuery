@@ -149,6 +149,7 @@ ORDER BY 1;
 ```
 
 **Output:**
+
 <img width="382" alt="ga_data_q4_output" src="https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/assets/145547282/42085257-441c-4ffb-b6ad-a34a2f3c00cf">
 
 -  The average number of pageviews increased in July for both 2 groups. 
