@@ -106,7 +106,7 @@ Revenue from the direct traffic source is among the highest.
 
 ---
 
-# 4. Average number of pageviews by purchaser type *(purchasers vs non-purchasers)* in June, July 2017.
+## 4. Average number of pageviews by purchaser type *(purchasers vs non-purchasers)* in June, July 2017.
 
 **Steps:**
 
@@ -157,7 +157,7 @@ ORDER BY 1;
 -  Purchasers may have a more specific goal in mind, leading to fewer pageviews on average.
 ---
 
-# 5. Average number of transactions per user that made a purchase in July 2017.
+## 5. Average number of transactions per user that made a purchase in July 2017.
 
 *Notes*:
 - *Purchaser: `totals.transactions` >= 1; `productRevenue` is not null. `fullVisitorId` field is user id.*
@@ -184,7 +184,7 @@ Average number of transactions per user that made a purchase in July 2017 is 4.1
 
 ---
 
-# 6. Average amount of money spent per session. Only include purchaser data in July 2017.
+## 6. Average amount of money spent per session. Only include purchaser data in July 2017.
 
 ```sql
 SELECT 
