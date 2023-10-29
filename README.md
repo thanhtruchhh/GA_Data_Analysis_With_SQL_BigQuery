@@ -39,3 +39,5 @@ The queries are as follows:
 - **Query 6:** Determine the average amount of money spent per session, considering only purchaser data in July 2017.
 - **Query 7:** Identify other products purchased by customers who bought the product "YouTube Men's Vintage Henley" in July 2017. The output should show the product name and the quantity ordered.
 - **Query 8:** Calculate a cohort map from product view to add to cart to purchase in Jan, Feb, and March 2017. Calculate the add_to_cart rate and purchase rate in product level. For example, 100% product view then 40% add_to_cart and 10% purchase. The output should be calculated in product level. *(Add_to_cart_rate = number product  add to cart / number product view. Purchase_rate = number product purchase / number product view)*.
+
+You can access [this file](https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/blob/main/exploring_ga_data.md) to see my solutions and analysis, or you can access my [project on BigQuery](https://console.cloud.google.com/bigquery?sq=103519097298:e89e992618254be1aa30edf3f1a9c20e) to run the queries and view the output directly.
