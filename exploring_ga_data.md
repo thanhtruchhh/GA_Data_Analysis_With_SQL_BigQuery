@@ -4,12 +4,12 @@ In this project, I will write 8 query in Bigquery base on Google Analytics Sampl
 
 You can access my [project on BigQuery](https://console.cloud.google.com/bigquery?sq=103519097298:e89e992618254be1aa30edf3f1a9c20e) to run the queries and view the output directly.
 
-## 1. Total visits, pageviews, and transactions for Jan, Feb, and March 2017, ordered by month.
+## 1. Total visits, pageviews, and transactions for Jan, Feb, and March 2017, ordered by month
 
 ```sql
 SELECT 
   FORMAT_DATE('%Y%m', (PARSE_DATE('%Y%m%d', date))) AS month,
-  COUNT(fullVisitorId) AS vistits,
+  COUNT(fullVisitorId) AS visits,
   SUM(totals.pageviews) AS pageviews,
   SUM(totals.transactions) AS transactions
 FROM `bigquery-public-data.google_analytics_sample.ga_sessions_2017*`
@@ -22,12 +22,13 @@ ORDER BY 1;
 
 <img width="464" alt="ga_data_q1_output" src="https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/assets/145547282/bf93789e-2a75-4337-9ed5-a20894f7562a">
 
+- The total of visits to the website varied from month to month. 
 - The total number of transactions is increasing month by month, with a particularly significant surge in March. This could be due to changes in customer behavior or the company's marketing strategies.
 - The increasing conversion rate, from 1.10% in January to 1.42% in March
 
 ---
 
-## 2. Bounce rate per traffic source in July 2017.
+## 2. Bounce rate per traffic source in July 2017
 
 - The `totals.bounces` column contains `1` or `NULL` &rarr; Use `COUNT` to avoid potential `NULL` value in output.
 - Bounce rate = num bounce / total visit.
@@ -47,17 +48,21 @@ ORDER BY 2 DESC;
 
 <img width="470" alt="ga_data_q2_output" src="https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/assets/145547282/683031c0-6bb3-44f8-b3de-383c0c3049eb">
 
-- The bounce rates for the different sources vary widely.
-- Google, (direct), and youtube.com are the top sources of visits, but a significant portion of visitors from these sources are leaving the site without engaging further:
-  - Google: Need optimize the landing pages to ensure they match search intent, and work on providing compelling and relevant content to keep visitors engaged.
-  - Direct: There might be UI/UX issues on the website &rarr; Collect user feedback to identify and address these issues.
-  - YouTube: Visitors arriving from YouTube might not be finding what they expect or are not encouraged to explore the site further &rarr; Opitimize the landing pages or creating more compelling CTA on the site.
-- Both reddit.com and mail.google.com have relatively high total visits and low bounce rates *(<30%)*, which indicates that these sources are performing well in terms of visitor engagement and retention:
-  -  Reddit: Paricipate actively in relevant subreddits, response to comments, and contribute positively to discussions related to the company's content. 
+* The bounce rates for the different sources vary widely.
+* Search engines *(google, bing, yahoo, duckduckgo...)* have high bounce rate. It indicates users arriving from there are not finding what they are looking for or are not engaged effectively &rarr; Need optimize the landing pages to ensure they match search intent, and work on providing compelling and relevant content to keep visitors engaged.
+* Google, (direct), and youtube.com are the top sources of visits, but a significant portion of visitors from these sources are leaving the site without engaging further:
+  * Direct: There might be UI/UX issues on the website &rarr; Collect user feedback to identify and address these issues.
+  * YouTube: Visitors arriving from YouTube might not be finding what they expect or are not encouraged to explore the site further &rarr; Opitimize the landing pages or creating more compelling CTA on the site.
+* Both reddit.com and mail.google.com have relatively high total visits and low bounce rates *(<30%)*, which indicates that these sources are performing well in terms of visitor engagement and retention:
+  *  Reddit: Paricipate actively in relevant subreddits, response to comments, and contribute positively to discussions related to the company's content.
+  *  Mail:
+      * Segment the email list.
+      * Personalize emails: Use the receipient's name, send personalized recommendations based on their past interactions with the website.
+      * Ensure that the content in emails is both relevant and valuable to the receipients: product recommendations, special offers, educational content...
 
 ---
 
-## 3. Revenue by traffic source by week, by month in June 2017.
+## 3. Revenue by traffic source by week, by month in June 2017
 
 **Steps:**
 
@@ -102,11 +107,15 @@ ORDER BY 4 DESC;
 
 <img width="584" alt="ga_data_q3_output" src="https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/assets/145547282/dcf250b6-0d93-4f8f-a614-a5ce15631400">
 
-Revenue from the direct traffic source is among the highest.
+Revenue from the direct, google, dfa traffic sources are among the highest:
+
+* Direct traffic often includes loyal customers, who directly type the URL into their browser or use bookmarks to access the site &rarr; Have high conversion rates.
+* Given the widespread use of Google for web searches, it's common to see significant traffic and revenue from this source.
+* Advertising campaigns managed through DoubleClick for Advertisers are generating income for the company &rarr;Advertising efforts are driving sales or conversions.
 
 ---
 
-## 4. Average number of pageviews by purchaser type *(purchasers vs non-purchasers)* in June, July 2017.
+## 4. Average number of pageviews by purchaser type *(purchasers vs non-purchasers)* in June, July 2017
 
 **Steps:**
 
@@ -153,11 +162,12 @@ ORDER BY 1;
 <img width="382" alt="ga_data_q4_output" src="https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/assets/145547282/42085257-441c-4ffb-b6ad-a34a2f3c00cf">
 
 -  The average number of pageviews increased in July for both 2 groups. 
--  Non-purchasers are more actively exploring the website's content, browsing various pages, or spending more time on the site &rarr; Optimize the user journey and provide more atractive and clearer CTAs.
--  Purchasers may have a more specific goal in mind, leading to fewer pageviews on average.
+-  Non-purchasers are more actively exploring the website's content, browsing various pages, or spending more time on the site. It indicates that these users are engaged with the company conte but might face barriers *(pricing, unclear navigation, a lack of trust, or difficulties in the purchase process..)* &rarr; Optimize the user journey, provide more attractive and clearer CTAs, offer vouchers, flash sales.
+-  Purchasers may have a more specific goal in mind, leading to fewer pageviews on average &rarr; Ensure a smoth payment experience + Recommend products beforing checking out.
+-  
 ---
 
-## 5. Average number of transactions per user that made a purchase in July 2017.
+## 5. Average number of transactions per user that made a purchase in July 2017
 
 *Notes*:
 - *Purchaser: `totals.transactions` >= 1; `productRevenue` is not null. `fullVisitorId` field is user id.*
@@ -184,7 +194,7 @@ Average number of transactions per user that made a purchase in July 2017 is 4.1
 
 ---
 
-## 6. Average amount of money spent per session. Only include purchaser data in July 2017.
+## 6. Average amount of money spent per session. Only include purchaser data in July 2017
 
 ```sql
 SELECT 
@@ -206,7 +216,7 @@ Average amount of money spent per session in July 2017 is 43.86.
 
 ---
 
-## 7. Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017.
+## 7. Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017
 
 **Steps:**
 
@@ -245,13 +255,14 @@ ORDER BY 2 DESC;
 <img width="278" alt="ga_data_q7_output" src="https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/assets/145547282/06328751-b7be-448a-94ff-ce24c26e1149">
 
 - Google Sunglasses stands out with a substantial quantity of 20.
-- The list includes different types, including short sleeve, hoodies, or lip balm, for men and women &rarr; Customers who bought the Henley shirt had a diverse range of preferences, both in terms of style and gender-specific items.
-- These products appear to be related to Google, YouTube, and related merchandise, indicating a level of brand loyalty or interest in related items.
-  &rarr; Cross-sell or make recommendations for customers who bought the Henley shirt.
+- The list includes different types, including short sleeve, hoodies, or lip balm, for men or women &rarr; Customers who bought the Henley shirt had a diverse range of preferences, both in terms of style and gender-specific items.
+- These products appear to be related to Google or YouTube indicating a level of brand loyalty or interest in related items.
+
+&rarr; Cross-sell or make recommendations for customers who bought the Henley shirt.
 
 ---
 
-## 8. Cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. 
+## 8. Cohort map from product view to addtocart to purchase in Jan, Feb and March 2017
 
 **Steps:**
 
