@@ -164,7 +164,6 @@ ORDER BY 1;
 -  The average number of pageviews increased in July for both 2 groups. 
 -  Non-purchasers are more actively exploring the website's content, browsing various pages, or spending more time on the site. It indicates that these users are engaged with the company content but might face barriers *(pricing, unclear navigation, a lack of trust, or difficulties in the purchase process..)* &rarr; Optimize the user journey, provide more attractive and clearer CTAs, offer vouchers, flash sales.
 -  Purchasers may have a more specific goal in mind, leading to fewer pageviews on average &rarr; Ensure a smoth payment experience + Recommend products beforing checking out.
--  
 ---
 
 ## 5. Average number of transactions per user that made a purchase in July 2017
