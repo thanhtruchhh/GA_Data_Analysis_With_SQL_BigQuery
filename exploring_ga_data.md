@@ -111,7 +111,7 @@ Revenue from the direct, google, dfa traffic sources are among the highest:
 
 * Direct traffic often includes loyal customers, who directly type the URL into their browser or use bookmarks to access the site &rarr; Have high conversion rates.
 * Given the widespread use of Google for web searches, it's common to see significant traffic and revenue from this source.
-* Advertising campaigns managed through DoubleClick for Advertisers are generating income for the company &rarr;Advertising efforts are driving sales or conversions.
+* Advertising campaigns managed through DoubleClick for Advertisers *(dfa)* are generating income for the company &rarr; Advertising efforts are driving sales or conversions.
 
 ---
 
@@ -162,7 +162,7 @@ ORDER BY 1;
 <img width="382" alt="ga_data_q4_output" src="https://github.com/thanhtruchhh/GA_Data_Analysis_With_SQL_BigQuery/assets/145547282/42085257-441c-4ffb-b6ad-a34a2f3c00cf">
 
 -  The average number of pageviews increased in July for both 2 groups. 
--  Non-purchasers are more actively exploring the website's content, browsing various pages, or spending more time on the site. It indicates that these users are engaged with the company conte but might face barriers *(pricing, unclear navigation, a lack of trust, or difficulties in the purchase process..)* &rarr; Optimize the user journey, provide more attractive and clearer CTAs, offer vouchers, flash sales.
+-  Non-purchasers are more actively exploring the website's content, browsing various pages, or spending more time on the site. It indicates that these users are engaged with the company content but might face barriers *(pricing, unclear navigation, a lack of trust, or difficulties in the purchase process..)* &rarr; Optimize the user journey, provide more attractive and clearer CTAs, offer vouchers, flash sales.
 -  Purchasers may have a more specific goal in mind, leading to fewer pageviews on average &rarr; Ensure a smoth payment experience + Recommend products beforing checking out.
 -  
 ---
